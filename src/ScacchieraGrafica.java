@@ -5,7 +5,7 @@ public class ScacchieraGrafica extends JPanel {
     public static int SIZE_SCACCHIERA = 600;
     public static int SIZE_QUADRATI_SCACCHIERA = 75;
 
-    public void paint(Graphics g) {
+    public void disegna(Graphics g) {
         g.setColor(Color.decode("#654321"));
         g.drawRect(99,99,601,601);
         g.fillRect(100, 100, SIZE_SCACCHIERA, SIZE_SCACCHIERA);
@@ -20,5 +20,9 @@ public class ScacchieraGrafica extends JPanel {
                 g.clearRect(i, j, SIZE_QUADRATI_SCACCHIERA, SIZE_QUADRATI_SCACCHIERA);
             }
         }
+    }
+
+    public void disegnaPedine(Graphics g){
+
     }
 }

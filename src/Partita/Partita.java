@@ -10,9 +10,9 @@ import java.util.Random;
 
 public class Partita {
 
-    Damiera damiera;
+    Damiera damiera = Damiera.getInstanza();
     Giocatore player;
-    Cpu cpu = new Cpu();
+    Cpu cpu = Cpu.getIstanza();
     StatoCpu statoCpu;
     Random randomNumber = new Random();
     ArrayList<PedinaClient> pedineNere = new ArrayList<PedinaClient>();
@@ -40,13 +40,17 @@ public class Partita {
         int interoRandom = randomNumber.nextInt(11);
         if (interoRandom < 5) {
             giocatore.setPedineAssegnate(pedineNere);
-            System.out.println("PEDINE NERE ASSEGNATE");
+            giocatore.setSquadraNera(true);
+            giocatore.setSquadraRossa(false);
+            cpu.setSquadraRossa(true);
+            cpu.setSquadraNera(false);
 
         } else {
             giocatore.setPedineAssegnate(pedineRosse);
-            System.out.println("PEDINE ROSSE ASSEGNATE");
-
-
+            giocatore.setSquadraNera(false);
+            giocatore.setSquadraRossa(true);
+            cpu.setSquadraRossa(false);
+            cpu.setSquadraNera(true);
         }
     }
 

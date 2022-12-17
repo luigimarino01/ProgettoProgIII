@@ -1,7 +1,7 @@
 package Damiera;
 import Pedine.*;
 
-public class Casella extends Damiera {
+public class Casella{
     private PedinaClient pedinaSopra;
 
     public void setPedinaSopra(PedinaClient pedina){

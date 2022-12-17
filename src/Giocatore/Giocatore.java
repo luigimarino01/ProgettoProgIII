@@ -10,7 +10,24 @@ public class Giocatore {
     private GiocatoreBean giocatore = new GiocatoreBean();
     private ArrayList<PedinaClient> pedineAssegnate = new ArrayList<PedinaClient>();
 
+    private boolean squadraRossa;
+    private boolean squadraNera;
 
+    public boolean isSquadraRossa() {
+        return squadraRossa;
+    }
+
+    public void setSquadraRossa(boolean squadraRossa) {
+        this.squadraRossa = squadraRossa;
+    }
+
+    public boolean isSquadraNera() {
+        return squadraNera;
+    }
+
+    public void setSquadraNera(boolean squadraNera) {
+        this.squadraNera = squadraNera;
+    }
 
     public Giocatore(String nome, String cognome, String nickname){
         giocatore.setNome(nome);

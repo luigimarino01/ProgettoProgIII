@@ -1,6 +1,6 @@
 package Partita;
 
-import Cpu.Cpu;
+import Cpu.*;
 import Giocatore.Giocatore;
 import Pedine.PedinaClient;
 import Damiera.*;
@@ -13,6 +13,7 @@ public class Partita {
     Damiera damiera;
     Giocatore player;
     Cpu cpu = new Cpu();
+    StatoCpu statoCpu;
     Random randomNumber = new Random();
     ArrayList<PedinaClient> pedineNere = new ArrayList<PedinaClient>();
     ArrayList<PedinaClient> pedineRosse = new ArrayList<PedinaClient>();
@@ -48,6 +49,18 @@ public class Partita {
 
     public void assegnaGiocatore(Giocatore giocatore){
         this.player = giocatore;
+    }
+
+    public void inizializzaCpu(Cpu cpu){
+        int i = randomNumber.nextInt(11);
+        if(i<6){
+            statoCpu = new StatoDifensivo();
+        }
+        else {
+            statoCpu = new StatoOffensivo();
+        }
+        cpu.setStato(statoCpu);
+        cpu.setStrategia();
     }
 
     public void iniziaPartita(){

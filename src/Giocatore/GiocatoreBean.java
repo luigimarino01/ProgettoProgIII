@@ -6,6 +6,8 @@ public class GiocatoreBean implements java.io.Serializable{
     private String nickname;
     private int numeroVittorie;
 
+
+
     public String getNome() {
         return nome;
     }

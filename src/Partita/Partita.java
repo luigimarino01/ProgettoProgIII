@@ -22,14 +22,17 @@ public class Partita {
     private void inizializzaPartita(){
         for (int i = 0; i<12; i++){
             pedineRosse.add(new PedinaClient());
-            pedineNere.add(new PedinaClient());
+
 
             pedineRosse.get(i).setRossa(true);
             pedineRosse.get(i).setNera(false);
 
+        }
 
-            pedineNere.get(i).setNera(true);
-            pedineNere.get(i).setRossa(false);
+        for (int j = 0; j<12; j++){
+            pedineNere.add(new PedinaClient());
+            pedineNere.get(j).setNera(true);
+            pedineNere.get(j).setRossa(false);
         }
     }
 
@@ -65,6 +68,7 @@ public class Partita {
 
     public void iniziaPartita(){
         inizializzaPartita();
+        inizializzaCpu(cpu);
         assegnaPedine(player);
         System.out.println("PARTITA DI DAMA INIZIATA");
     }

@@ -1,10 +1,12 @@
 package Giocatore;
 
+import Database.DamaDB;
 import Pedine.PedinaClient;
 
 import java.util.ArrayList;
 
 public class Giocatore {
+    DamaDB damaDB = DamaDB.getIstanza();
     private GiocatoreBean giocatore = new GiocatoreBean();
     private ArrayList<PedinaClient> pedineAssegnate = new ArrayList<PedinaClient>();
 
@@ -15,7 +17,7 @@ public class Giocatore {
         giocatore.setCognome(cognome);
         giocatore.setNickname(nickname);
         giocatore.setNumeroVittorie(0);
-        //aggiungere creazione al db
+        damaDB.aggiungiGiocatoreDB(this);
     }
 
     public ArrayList<PedinaClient> getPedineAssegnate() {
@@ -28,5 +30,10 @@ public class Giocatore {
 
     public GiocatoreBean getGiocatore() {
         return giocatore;
+    }
+
+    public void aggiungiVittoria(){
+        giocatore.setNumeroVittorie(giocatore.getNumeroVittorie()+1);
+        damaDB.aggiungiVittoriaDB(this);
     }
 }

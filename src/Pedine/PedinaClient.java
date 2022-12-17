@@ -28,6 +28,9 @@ public class PedinaClient {
     }
     public void muoviPedina(int nuovaX, int nuovaY){
         pedina.muoviPedina(xCorrente,yCorrente,nuovaX,nuovaY);
+
+        this.xCorrente = nuovaX;
+        this.yCorrente = nuovaY;
     }
 
     public int getxCorrente() {

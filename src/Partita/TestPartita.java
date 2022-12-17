@@ -11,8 +11,8 @@ public class TestPartita {
         game.assegnaGiocatore(giocatore);
         game.iniziaPartita();
 
-        System.out.println(giocatore.getPedineAssegnate().get(0).isNera());
-        System.out.println(giocatore.getPedineAssegnate().get(0).isRossa());
+
+
 
     }
 }

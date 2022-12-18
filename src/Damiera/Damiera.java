@@ -2,7 +2,7 @@ package Damiera;
 
 public class Damiera {
     private static Damiera istanza;
-    static Casella[][] tavolaDaGioco;
+    public Casella[][] tavolaDaGioco;
     public Casella[][] getTavolaDaGioco() {
         return tavolaDaGioco;
     }

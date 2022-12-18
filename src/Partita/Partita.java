@@ -15,15 +15,15 @@ public class Partita {
     Cpu cpu = Cpu.getIstanza();
     StatoCpu statoCpu;
     Random randomNumber = new Random();
-    ArrayList<PedinaClient> pedineNere = new ArrayList<PedinaClient>();
-    ArrayList<PedinaClient> pedineRosse = new ArrayList<PedinaClient>();
+    ArrayList<PedinaClient> pedineNere = new ArrayList<>();
+    ArrayList<PedinaClient> pedineRosse = new ArrayList<>();
+
+
 
 
     private void inizializzaPartita(){
         for (int i = 0; i<12; i++){
             pedineRosse.add(new PedinaClient());
-
-
             pedineRosse.get(i).setRossa(true);
             pedineRosse.get(i).setNera(false);
 

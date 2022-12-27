@@ -8,6 +8,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class DamaDB {
 
@@ -93,7 +94,62 @@ public class DamaDB {
         }
     }
 
+public void inizializzaPrimePedineDB(ArrayList<PedinaClient> pedine){
+    try {
+        con = DriverManager.getConnection(url,"ROOT","ROOT");
+        for (int i = 1; i<13; i++){
+            PreparedStatement stmt = con.prepareStatement("UPDATE Pedina SET x = (?), y = (?) WHERE idPedina = (?)");
+            stmt.setInt(1,pedine.get(i-1).getxCorrente());
+            stmt.setInt(2,pedine.get(i-1).getyCorrente());
+            stmt.setInt(3,i);
+            stmt.execute();
+        }
 
+    }
+    catch (SQLException e){
+        e.printStackTrace();
+    }
+    finally {
+        try{
+            if (con!=null)
+                con.close();
+        }
+        catch (SQLException e){
+            e.printStackTrace();
+        }
+    }
+}
+
+    public void inizializzaSecondePedineDB(ArrayList<PedinaClient> pedine){
+        try {
+            con = DriverManager.getConnection(url,"ROOT","ROOT");
+            for (int i = 13; i<25; i++){
+                PreparedStatement stmt = con.prepareStatement("UPDATE Pedina SET x = (?), y = (?) WHERE idPedina = (?)");
+                stmt.setInt(1,pedine.get(i-13).getxCorrente());
+                stmt.setInt(2,pedine.get(i-13).getyCorrente());
+                stmt.setInt(3,i);
+                stmt.execute();
+            }
+
+        }
+        catch (SQLException e){
+            e.printStackTrace();
+        }
+        finally {
+            try{
+                if (con!=null)
+                    con.close();
+            }
+            catch (SQLException e){
+                e.printStackTrace();
+            }
+        }
+    }
+
+public void inizializzaPedinaNeraDB(int i, PedinaClient pedina){
+
+
+}
     public void spostamentoPedinaDB(PedinaClient pedina, int x, int y){
         try {
             con = DriverManager.getConnection(url,"ROOT","ROOT");

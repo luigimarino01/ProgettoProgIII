@@ -11,6 +11,16 @@ public class PedinaClient {
     private boolean Rossa;
     private boolean Nera;
 
+    public void setxCorrente(int xCorrente) {
+        this.xCorrente = xCorrente;
+    }
+
+    public void setyCorrente(int yCorrente) {
+        this.yCorrente = yCorrente;
+    }
+
+
+
     public boolean isRossa() {
         return Rossa;
     }
@@ -28,7 +38,7 @@ public class PedinaClient {
     }
 
     public PedinaClient(){
-        damaDB.aggiungiPedinaDB(this);
+
     }
     public void muoviPedina(int nuovaX, int nuovaY){
         pedina.muoviPedina(xCorrente,yCorrente,nuovaX,nuovaY);
